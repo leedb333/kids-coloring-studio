@@ -1,0 +1,62 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  color: #35465c;
+  background: #faf1f7;
+  font-weight: 700;
+}
+
+body { margin: 0; }
+button { font-family: inherit; }
+
+#root {
+  margin-inline: auto;
+  max-width: 1480px;
+  padding: clamp(12px, 2vw, 28px);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.drawing-gallery {
+  background: #fffafd;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: clamp(12px, 2vw, 28px);
+}
+
+.drawing-gallery .gallery-heading {
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 4px 2px 24px;
+}
+
+.gallery-heading img {
+  width: clamp(42px, 6vw, 64px);
+  height: auto;
+  border-radius: 20%;
+  flex-shrink: 0;
+}
+
+.gallery-heading h1 {
+  color: #63375d;
+  font-size: clamp(21px, 3.2vw, 40px);
+  letter-spacing: -.045em;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 700px) {
+  #root { padding: 12px 10px; }
+  .drawing-gallery { border-radius: 22px; }
+  .drawing-gallery .gallery-heading { gap: 10px; padding-bottom: 16px; }
+  .coloring-game .canvas-scroll { --canvas-height: calc((100vw - 26px) / var(--art-ratio)); }
+}
